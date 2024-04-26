@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
-const LeaseIcon = require("../assets/Lease.png");
-const RideIcon = require("../assets/Ride.png");
+const LeaseIcon = require("../assets/newLease.png");
+const RideIcon = require("../assets/newRide.png");
 const ArrowIcon = require("../assets/Arrow.png");
 const Location = require("../assets/location.png");
 const Member = require("../assets/member.png");
@@ -69,8 +69,9 @@ function Home() {
         > */}
         <TouchableOpacity style={styles.card2}>
           <Text style={{ fontWeight: 500 }}>Lease</Text>
+          <View>
           <Image source={RideIcon} style={styles.icon} />
-
+          </View>
           <View
             style={{
               display: "flex",
@@ -139,7 +140,7 @@ const styles = StyleSheet.create({
   },
 
   bottom: {
-    flex: 0.27,
+    flex: 0.3,
     display: "flex",
     flexDirection: "row",
     gap: 10,
@@ -152,8 +153,10 @@ const styles = StyleSheet.create({
       "'rgba(233, 251, 255, 0.9)', 'rgba(35, 215, 255, 0.868675)', 'rgba(212, 247, 255, 0.709688)', 'rgba(0, 209, 255, 0)'",
     borderRadius: 20,
     padding: 10,
+    paddingVertical:15,
     borderWidth: 2,
     borderColor: "lightgrey",
+
   },
   card2: {
     flex: 1,
@@ -163,6 +166,10 @@ const styles = StyleSheet.create({
     padding: 10,
     borderWidth: 2,
     borderColor: "lightgrey",
+  },
+
+  icon:{
+    height:100
   },
   arrow: {
     width: 20,

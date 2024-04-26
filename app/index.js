@@ -7,6 +7,8 @@ export default function App() {
     <View className="flex-1 items-center justify-center bg-red-300">
       <Text className="text-3xl">Open up App.js start app!</Text>
       <StatusBar style="auto" />
+
+      <Link href="/tabs" style={{color:"blue"}}>Tabs</Link>
       <Link href="/home" style={{color:"blue"}}>Home</Link>
       <Link href="/profile" style={{color:"blue"}}>Go to Profile</Link>
       <Link href="/completeProfile" style={{color:"blue"}}>Complete Profile</Link>
