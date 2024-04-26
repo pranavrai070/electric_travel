@@ -4,10 +4,15 @@ import { Link } from 'expo-router';
 
 export default function App() {
   return (
+
     <View className="flex-1 items-center justify-center bg-red-300">
       <Text className="text-3xl">Open up App.js start app!</Text>
       <StatusBar style="auto" />
       <Link href="/profile" style={{color:"blue"}}>Go to Profile</Link>
+      <Link href="/signup" style={{color:"blue"}}>Go to SignUp</Link>
+      <Link href="/password" style={{color:"blue"}}>Go to Create Password</Link>
+      <Link href="/verification" style={{color:"blue"}}>Go to Verification</Link>
+      <Link href="/help" style={{color:"blue"}}>Go to get help</Link>
     </View>
   );
 }

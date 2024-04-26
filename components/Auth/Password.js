@@ -15,18 +15,25 @@ const Signup = () => {
 
       return (
         <View style={styles.container}>
-          <Image style={styles.image} source={require('../../assets/image.png')} />
-          <Text style={styles.title}>Verification</Text>
-          <Text style={styles.message}>We will send you a <Text style={styles.bold}>ONE TIME OTP</Text> on your phone number</Text>
+          <Image style={styles.image} source={require('../../assets/image.png')} className="" />
+          <Text style={styles.title}>Password</Text>
+          <Text style={styles.message}>Create a login password</Text>
           <TextInput
             style={styles.input}
-            placeholder="Enter Phone Number"
+            placeholder="Password"
+            value={phoneNumber}
+            onChangeText={handlePhoneNumberChange}
+            keyboardType="phone-pad"
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Confirm Password"
             value={phoneNumber}
             onChangeText={handlePhoneNumberChange}
             keyboardType="phone-pad"
           />
          <TouchableOpacity style={styles.button} onPress={handleVerify}>
-            <Text style={styles.buttonText}>Get OTP</Text>
+            <Text style={styles.buttonText}>Submit</Text>
           </TouchableOpacity>
 
         </View>
@@ -49,14 +56,14 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 24,
         fontWeight: 'bold',
-        color: 'black', // Change color to dark black
+        color: 'black', 
         marginBottom: 20
     },
       message: {
         fontSize: 16,
         textAlign: 'center',
         marginBottom: 40,
-        color: 'black', // Change color to blue
+        color: 'black', 
         width: '55%'
       },
       bold:{
@@ -72,10 +79,7 @@ const styles = StyleSheet.create({
         paddingLeft: 20,
         backgroundColor:  '#4E4E4E1A'
       },
-    //   inputBackground: {
-    //     backgroundColor:  '#4E4E4E1A'
-
-    //   },
+    
       button: {
         backgroundColor: '#00B2FF',
         width: '99%',

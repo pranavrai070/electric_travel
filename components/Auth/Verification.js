@@ -15,20 +15,39 @@ const Signup = () => {
 
       return (
         <View style={styles.container}>
-          <Image style={styles.image} source={require('../../assets/image.png')} />
+          <Image style={styles.image} source={require('../../assets/image.png')} className="" />
           <Text style={styles.title}>Verification</Text>
-          <Text style={styles.message}>We will send you a <Text style={styles.bold}>ONE TIME OTP</Text> on your phone number</Text>
-          <TextInput
+          <Text style={styles.message}>You will get OTP in SMS</Text>
+          <View style={styles.inputContainer}>
+            <TextInput
             style={styles.input}
-            placeholder="Enter Phone Number"
             value={phoneNumber}
             onChangeText={handlePhoneNumberChange}
             keyboardType="phone-pad"
           />
+           <TextInput
+            style={styles.input}
+            value={phoneNumber}
+            onChangeText={handlePhoneNumberChange}
+            keyboardType="phone-pad"
+          />
+           <TextInput
+            style={styles.input}
+            value={phoneNumber}
+            onChangeText={handlePhoneNumberChange}
+            keyboardType="phone-pad"
+          />
+           <TextInput
+            style={styles.input}
+            value={phoneNumber}
+            onChangeText={handlePhoneNumberChange}
+            keyboardType="phone-pad"
+          />
+          </View>
          <TouchableOpacity style={styles.button} onPress={handleVerify}>
-            <Text style={styles.buttonText}>Get OTP</Text>
+            <Text style={styles.buttonText}>Verify</Text>
           </TouchableOpacity>
-
+          <Text style={styles.lastLine}>Didn't receive the verification OTP? <Text style={styles.colorChange}>Resend again</Text></Text>
         </View>
       );
     };
@@ -49,21 +68,21 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 24,
         fontWeight: 'bold',
-        color: 'black', // Change color to dark black
+        color: 'black', 
         marginBottom: 20
     },
       message: {
         fontSize: 16,
         textAlign: 'center',
         marginBottom: 40,
-        color: 'black', // Change color to blue
+        color: 'black',
         width: '55%'
       },
       bold:{
         fontWeight:'bold'
       },
       input: {
-        width: '99%',
+        width: '15%',
         height: 51,
         borderRadius: 19,
         borderWidth: 1,
@@ -72,10 +91,15 @@ const styles = StyleSheet.create({
         paddingLeft: 20,
         backgroundColor:  '#4E4E4E1A'
       },
-    //   inputBackground: {
-    //     backgroundColor:  '#4E4E4E1A'
+      inputContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        gap: 10,
 
-    //   },
+      },
+      colorChange: {
+        color: '#00B2FF',
+      },
       button: {
         backgroundColor: '#00B2FF',
         width: '99%',
@@ -83,6 +107,7 @@ const styles = StyleSheet.create({
         borderRadius: 19,
         justifyContent: 'center',
         alignItems: 'center',
+        marginBottom: 20,
       },
       buttonText: {
         color: 'white'
