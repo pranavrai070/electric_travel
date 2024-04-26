@@ -24,28 +24,28 @@ const Help = () => {
       <Text style={styles.Text3}>recommended help</Text>      
       <View style={styles.tab}>
         <Text style={styles.Text4}>how to use EV Dex</Text>
-        <Image style={styles.arrow} source={require('../../assets/arrow.png')} />
+        <Image style={styles.arrow} source={require('../../assets/blackArrow.png')} />
       </View>
       <View style={styles.line}></View>
       <View style={styles.tab}>
         <Text style={styles.Text4}>Refunding the Security Deposit</Text>
-        <Image style={styles.arrow} source={require('../../assets/arrow.png')} />
+        <Image style={styles.arrow} source={require('../../assets/blackArrow.png')} />
       </View>
       <View style={styles.line}></View>
       <View style={styles.tab}>
         <Text style={styles.Text4}>the battery discharged completely during my ride</Text>
-        <Image style={styles.arrow} source={require('../../assets/arrow.png')} />
+        <Image style={styles.arrow} source={require('../../assets/blackArrow.png')} />
       </View>
       <View style={styles.line}></View>
       <View style={styles.tab}>
         <Text style={styles.Text4}>rate Card</Text>
-        <Image style={styles.arrow} source={require('../../assets/arrow.png')} />
+        <Image style={styles.arrow} source={require('../../assets/blackArrow.png')} />
       </View>
       <View style={styles.line}></View>
       <View style={styles.chat}>
       <Image source={require('../../assets/chat.png')} />
       <Text  style={styles.Text5}>Chat with us</Text>
-      <Image style={styles.arrow} source={require('../../assets/arrow.png')} />
+      <Image style={styles.arrow} source={require('../../assets/blackArrow.png')} />
       </View>
       <View style={styles.search}>
       <Image style={styles.searchIcon}source={require('../../assets/Search.png')} />
