@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TextInput, Button,Image, TouchableOpacity } fro
 import React, { useState } from 'react';
 
 
-const Signup = () => {
+const Verification = () => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const handleVerify = () => {
         // Implement verification logic here (e.g., send OTP to the phone number)
@@ -52,7 +52,7 @@ const Signup = () => {
       );
     };
 
-export default Signup;
+export default Verification;
 
 const styles = StyleSheet.create({
     container: {
