@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 const LeaseIcon = require("../assets/newLease.png");
 const RideIcon = require("../assets/newRide.png");
-const ArrowIcon = require("../assets/Arrow.png");
+const ArrowIcon = require("../assets/arrow.png");
 const Location = require("../assets/location.png");
 const Member = require("../assets/member.png");
 import { LinearGradient } from "expo-linear-gradient";
