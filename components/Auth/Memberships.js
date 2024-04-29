@@ -58,7 +58,7 @@ const MyComponent = () => {
       <View style={styles.view2}>
 
     <View style={styles.head}> 
-     <Image style={styles.logo} source={require('../../assets/fevLogoq.png')} />
+     <Image style={styles.logo} source={require('../../assets/fevlogo.png')} />
      <Text style={styles.T2}>Daily</Text>
     </View>
 
