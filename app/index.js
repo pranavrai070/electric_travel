@@ -18,11 +18,11 @@ export default function App() {
       <Link href="/rideStart" style={{color:"blue"}}>Ride start</Link>
       <Link href="/kyc" style={{color:"blue"}}>KYC</Link>
       <Link href="/business" style={{color:"blue"}}>Business</Link>
-
-      <Link href="/signup" style={{color:"blue"}}>Go to SignUp</Link>
-      <Link href="/password" style={{color:"blue"}}>Go to Create Password</Link>
-      <Link href="/verification" style={{color:"blue"}}>Go to Verification</Link>
-      <Link href="/help" style={{color:"blue"}}>Go to get help</Link>
+      <Link href="/signup" style={{color:"blue"}}>SignUp</Link>
+      <Link href="/password" style={{color:"blue"}}>Create Password</Link>
+      <Link href="/verification" style={{color:"blue"}}>Verification</Link>
+      <Link href="/help" style={{color:"blue"}}>get help</Link>
+      <Link href="/memberships" style={{color:"blue"}}>Memberships</Link>
     </View>
   );
 }
