@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 const LeaseIcon = require("../assets/newLease.png");
 const RideIcon = require("../assets/newRide.png");
-const ArrowIcon = require("../assets/Arrow.png");
+const ArrowIcon = require("../assets/arrow.png");
 const Location = require("../assets/location.png");
 const Member = require("../assets/member.png");
 import { LinearGradient } from "expo-linear-gradient";
@@ -47,9 +47,10 @@ function Home() {
       </View>
       <View style={styles.bottom}>
         <LinearGradient
-          colors={["#FFFBE9", "#FFE551", "#FFCC11", "rgba(217, 217, 217, 0)"]}
+          colors={["rgba(72, 222, 255, 0.7)","rgba(0, 209, 255, 0.9)", "rgba(72, 222, 255, 0)"]}
+          style={styles.card1}
         >
-          <TouchableOpacity style={styles.card1}>
+          <TouchableOpacity >
             <Text style={{ fontWeight: 500 }}>Ride Now</Text>
             <Image source={LeaseIcon} style={styles.icon} />
             <View
@@ -64,13 +65,14 @@ function Home() {
             </View>
           </TouchableOpacity>
         </LinearGradient>
-        {/* <LinearGradient
+        <LinearGradient
           colors={["#FFFBE9", "#FFE551", "#FFCC11", "rgba(217, 217, 217, 0)"]}
-        > */}
-        <TouchableOpacity style={styles.card2}>
+          style={styles.card2}
+        >
+        <TouchableOpacity >
           <Text style={{ fontWeight: 500 }}>Lease</Text>
           <View>
-          <Image source={RideIcon} style={styles.icon} />
+            <Image source={RideIcon} style={styles.icon} />
           </View>
           <View
             style={{
@@ -83,7 +85,7 @@ function Home() {
             <Image source={ArrowIcon} style={styles.arrow} />
           </View>
         </TouchableOpacity>
-        {/* </LinearGradient> */}
+        </LinearGradient>
       </View>
     </View>
   );
@@ -149,27 +151,26 @@ const styles = StyleSheet.create({
   },
   card1: {
     flex: 1,
-    backgroundColor:
-      "'rgba(233, 251, 255, 0.9)', 'rgba(35, 215, 255, 0.868675)', 'rgba(212, 247, 255, 0.709688)', 'rgba(0, 209, 255, 0)'",
+    // backgroundColor:
+    // "'rgba(233, 251, 255, 0.9)', 'rgba(35, 215, 255, 0.868675)', 'rgba(212, 247, 255, 0.709688)', 'rgba(0, 209, 255, 0)'",
     borderRadius: 20,
     padding: 10,
-    paddingVertical:15,
+    paddingVertical: 15,
     borderWidth: 2,
     borderColor: "lightgrey",
-
   },
   card2: {
     flex: 1,
-    backgroundColor:
-      "'#FFFBE9', '#FFE551', '#FFCC11', 'rgba(217, 217, 217, 0)'",
+    // backgroundColor:
+    //   "'#FFFBE9', '#FFE551', '#FFCC11', 'rgba(217, 217, 217, 0)'",
     borderRadius: 20,
     padding: 10,
     borderWidth: 2,
     borderColor: "lightgrey",
   },
 
-  icon:{
-    height:100
+  icon: {
+    height: 100,
   },
   arrow: {
     width: 20,

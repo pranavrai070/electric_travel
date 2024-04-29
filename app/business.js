@@ -8,23 +8,36 @@ import {
   Alert,
   Image,
 } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 const Profile = require("../assets/business.png");
 
 function Business() {
   return (
-    <View style={styles.container}>
-      <View style={styles.image}>
-        <Image style={styles.image} source={Profile} />
+    <LinearGradient
+      colors={[
+        "rgba(77, 202, 255, 0.7)",
+        "rgba(255, 255, 255, 0.7)",
+        "rgba(255, 255, 255, 1)",
+        "rgba(255, 255, 255, 0.7)",
+        "rgba(77, 202, 255, 0.7)",
+      ]}
+      locations={[0, 0.15, 0.5, 0.7, 1]}
+      // style={styles.container}
+    >
+      <View style={styles.container}>
+        <View style={styles.image}>
+          <Image style={styles.image} source={Profile} />
+        </View>
+        <View>
+          <TouchableOpacity style={styles.ridenow}>
+            <Text style={styles.buttonText1}>Ride Now</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.business}>
+            <Text style={styles.buttonText2}>Business</Text>
+          </TouchableOpacity>
+        </View>
       </View>
-      <View>
-        <TouchableOpacity style={styles.ridenow}>
-          <Text style={styles.buttonText1}>Ride Now</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.business}>
-          <Text style={styles.buttonText2}>Business</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+    </LinearGradient>
   );
 }
 
@@ -38,7 +51,7 @@ const styles = StyleSheet.create({
     height: "100%",
     overflow: "visible",
     height: "100%",
-    
+    // backgroundColor: "#fff",
   },
 
   ridenow: {
@@ -59,7 +72,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.46,
     shadowRadius: 11.14,
     elevation: 5,
-
   },
   business: {
     backgroundColor: "#Fff",
@@ -69,7 +81,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     height: 50,
     width: "80%",
-    marginTop:20,
+    marginTop: 20,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -80,18 +92,16 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
 
-  buttonText1:{
-    color:'white',
-    fontSize:22,
-    fontWeight:"bold"
+  buttonText1: {
+    color: "white",
+    fontSize: 22,
+    fontWeight: "bold",
   },
-  buttonText2:{
-    color:'#00b2ff',
-    fontSize:22,
-    fontWeight:"bold"
+  buttonText2: {
+    color: "#00b2ff",
+    fontSize: 22,
+    fontWeight: "bold",
   },
-  
-
 
   image: {
     width: "100%",
