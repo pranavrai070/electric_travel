@@ -29,9 +29,8 @@ const LoginScreen = () => {
   };
   return (
     <LinearGradient
-      //   background={["linear-gradient(180deg, #FFE248 44.1%, #4BC9F 92.71%)"]}
-      colors={["#FFE248", "#4BC9FF"]}
-   
+      colors={["#FFE248", "#FFE248", "#4BC9FF", "#4BC9FF"]}
+      locations={[0, 0.5, 0.9, 1]}
     >
       <View style={styles.container}>
         <View style={styles.top}>
@@ -95,7 +94,7 @@ const styles = StyleSheet.create({
 
   inputContainer: {
     flexDirection: "row",
-    backgroundColor:' rgba(78, 78, 78, 0.1)',
+    backgroundColor: " rgba(78, 78, 78, 0.1)",
     alignItems: "center",
     height: 50,
     gap: 20,
@@ -105,8 +104,8 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   shadowProp: {
-    shadowColor: 'rgba(0, 0, 0, 0.25)',
-    shadowOffset: {width: 10, height: 2},
+    shadowColor: "rgba(0, 0, 0, 0.25)",
+    shadowOffset: { width: 10, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 4,
   },
@@ -127,7 +126,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
     marginBottom: 30,
     alignItems: "center",
-    height:50,
+    height: 50,
   },
   buttonText: {
     color: "#fff",
@@ -148,7 +147,7 @@ const styles = StyleSheet.create({
   },
   newuser: {
     fontSize: 16,
-    color:'white'
+    color: "white",
   },
 
   signUpText: {

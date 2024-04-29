@@ -12,14 +12,14 @@ import LeasePayment from "../components/Kyc/LeasePayment";
 function kyc() {
   return (
     <View>
-      {/* <KycPhoto/> */}
+      <KycPhoto/>
       {/* <CompleteKYC/> */}
       {/* <KycDetails/> */}
       {/* <KycID/> */}
       {/* <KycBank /> */}
       {/* <Payment/> */}
       {/* <PaymentDetail/> */}
-      <LeasePayment/>
+      {/* <LeasePayment/> */}
     </View>
   );
 }
