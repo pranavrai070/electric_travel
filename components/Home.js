@@ -1,10 +1,18 @@
 import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+  Pressable,
+} from "react-native";
 const LeaseIcon = require("../assets/newLease.png");
 const RideIcon = require("../assets/newRide.png");
+// const RideIcon = require("../assets/RN.png");
 const ArrowIcon = require("../assets/arrow.png");
-const Location = require("../assets/location.png");
-const Member = require("../assets/member.png");
+const Location = require("../assets/newLocation.png");
+const Member = require("../assets/newMember.png");
 import { LinearGradient } from "expo-linear-gradient";
 // import MapView, { Marker } from 'react-native-maps';
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
@@ -14,7 +22,8 @@ function Home() {
   return (
     <View style={styles.container}>
       <View style={styles.top}>
-        <BlurView intensity={100} tint="light" style={styles.blurView} />
+        <BlurView intensity={80} tint="light" style={styles.blurView} />
+      
         <MapView
           style={{ flex: 1 }}
           provider={PROVIDER_GOOGLE}
@@ -42,15 +51,26 @@ function Home() {
           <Text style={styles.middletext}>Nearest FEV Hubs</Text>
         </View>
         <View>
-          <Image source={Member} style={styles.icon2} />
+          <Image
+            source={Member}
+            style={styles.icon2}
+            resizeMode="contain"
+            borderRadius={15}
+          />
         </View>
       </View>
+
       <View style={styles.bottom}>
         <LinearGradient
-          colors={["rgba(72, 222, 255, 0.7)","rgba(0, 209, 255, 0.9)", "rgba(72, 222, 255, 0)"]}
+          colors={[
+            "rgba(72, 222, 255, 0.7)",
+            "rgba(0, 209, 255, 0.9)",
+            "rgba(72, 222, 255, 0)",
+          ]}
           style={styles.card1}
+          className="drop-shadow-md"
         >
-          <TouchableOpacity >
+          <TouchableOpacity className="shadow-inner">
             <Text style={{ fontWeight: 500 }}>Ride Now</Text>
             <Image source={LeaseIcon} style={styles.icon} />
             <View
@@ -65,26 +85,27 @@ function Home() {
             </View>
           </TouchableOpacity>
         </LinearGradient>
+
         <LinearGradient
           colors={["#FFFBE9", "#FFE551", "#FFCC11", "rgba(217, 217, 217, 0)"]}
           style={styles.card2}
         >
-        <TouchableOpacity >
-          <Text style={{ fontWeight: 500 }}>Lease</Text>
-          <View>
-            <Image source={RideIcon} style={styles.icon} />
-          </View>
-          <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-            }}
-          >
-            <Text style={styles.text}>Rent a FEV to take rides</Text>
-            <Image source={ArrowIcon} style={styles.arrow} />
-          </View>
-        </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={{ fontWeight: 500 }}>Lease</Text>
+            <View>
+              <Image source={RideIcon} style={styles.icon} />
+            </View>
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+              }}
+            >
+              <Text style={styles.text}>Rent a FEV to take rides</Text>
+              <Image source={ArrowIcon} style={styles.arrow} />
+            </View>
+          </TouchableOpacity>
         </LinearGradient>
       </View>
     </View>
@@ -98,6 +119,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     height: "100%",
+    backgroundColor: "#fff",
   },
   blurView: {
     position: "absolute",
@@ -106,6 +128,9 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     height: 40, // Adjust the height of the blurred area as needed
+
+  
+ 
   },
 
   top: {
@@ -135,10 +160,12 @@ const styles = StyleSheet.create({
   icon1: {
     width: 50,
     height: 50,
+    borderRadius: 10,
   },
   icon2: {
     width: 70,
     height: 70,
+    borderRadius: 10,
   },
 
   bottom: {
@@ -151,18 +178,16 @@ const styles = StyleSheet.create({
   },
   card1: {
     flex: 1,
-    // backgroundColor:
-    // "'rgba(233, 251, 255, 0.9)', 'rgba(35, 215, 255, 0.868675)', 'rgba(212, 247, 255, 0.709688)', 'rgba(0, 209, 255, 0)'",
+
     borderRadius: 20,
     padding: 10,
     paddingVertical: 15,
-    borderWidth: 2,
-    borderColor: "lightgrey",
+    // borderWidth: 2,
+    // borderColor: "lightgrey",
   },
   card2: {
     flex: 1,
-    // backgroundColor:
-    //   "'#FFFBE9', '#FFE551', '#FFCC11', 'rgba(217, 217, 217, 0)'",
+
     borderRadius: 20,
     padding: 10,
     borderWidth: 2,

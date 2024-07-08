@@ -9,7 +9,8 @@ import {
   Image,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-const Profile = require("../assets/business.png");
+const Profile = require("../assets/newBusiness.jpg");
+import { Platform } from 'react-native';
 
 function Business() {
   return (
@@ -25,10 +26,10 @@ function Business() {
       // style={styles.container}
     >
       <View style={styles.container}>
-        <View style={styles.image}>
-          <Image style={styles.image} source={Profile} />
+        <View style={styles.top} >
+          <Image style={styles.image} source={Profile} resizeMode="contain" />
         </View>
-        <View>
+        <View style={styles.bottom}>
           <TouchableOpacity style={styles.ridenow}>
             <Text style={styles.buttonText1}>Ride Now</Text>
           </TouchableOpacity>
@@ -47,11 +48,9 @@ const styles = StyleSheet.create({
   container: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-evenly",
+    // justifyContent: "space-evenly",
     height: "100%",
-    overflow: "visible",
-    height: "100%",
-    // backgroundColor: "#fff",
+
   },
 
   ridenow: {
@@ -62,17 +61,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     height: 50,
     width: "80%",
-    // borderWidth: 2,
-    // borderColor: "lightgrey",
-    shadowColor: "#000",
+    shadowColor: "rgba(0, 0, 0, 0.25)",
     shadowOffset: {
-      width: 0,
-      height: 0,
+      width: 2,
+      height: 2,
     },
     shadowOpacity: 0.46,
     shadowRadius: 11.14,
     elevation: 5,
   },
+
+ 
   business: {
     backgroundColor: "#Fff",
     paddingVertical: 10,
@@ -82,13 +81,13 @@ const styles = StyleSheet.create({
     height: 50,
     width: "80%",
     marginTop: 20,
-    shadowColor: "#000",
+    shadowColor: "rgba(0, 0, 0, 0.25)",
     shadowOffset: {
       width: 0,
       height: 0,
     },
     shadowOpacity: 0.46,
-    shadowRadius: 11.14,
+    shadowRadius: 3,
     elevation: 5,
   },
 
@@ -105,5 +104,18 @@ const styles = StyleSheet.create({
 
   image: {
     width: "100%",
+    height:'100%',
+    marginTop:200
   },
+
+  top:{
+    flex:1,
+    justifyContent:"space-evenly",
+  
+  },
+
+  bottom:{
+    flex:1,
+    justifyContent:'center'
+  }
 });

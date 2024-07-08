@@ -8,7 +8,7 @@ const [text, onChangeText] = React.useState('');
   return (
     <View className="h-screen">
     <View className="mt-6" style={styles.container}>
-      <Image className="w-full" source={require('../assets/feedback.png')}  resizeMode="contain" />
+      <Image className="w-fill" source={require('../assets/feedback.png')}  resizeMode="contain" />
       <Image className="w-full" style={[styles.fevLogo,{
         transform: [{translateY: -68}]
       }]} source={require('../assets/fevCompleteLogo.png')}  resizeMode="contain" />

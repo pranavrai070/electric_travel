@@ -8,7 +8,7 @@ import {
   Alert,
   Image,
 } from "react-native";
-const Profile = require("../../assets/KycProfile.png");
+const Profile = require("../../assets/newKycProfile.png");
 import CustomButton from "./Button";
 import KycDetails from "./KycDetails";
 
@@ -22,7 +22,7 @@ function completeProfile() {
     <View style={styles.container}>
         {!showKycDetails ? (
       <View style={styles.image}>
-        <Image style={styles.image} source={Profile} />
+        <Image style={styles.image} source={Profile}   />
         <View style={styles.heading1}>
           <Text style={styles.heading}>Complete your KYC</Text>
          
@@ -51,8 +51,9 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: "100%",
-    marginTop: 10,
+
+    height:350,
+    width:350,
   },
 
   heading: {
