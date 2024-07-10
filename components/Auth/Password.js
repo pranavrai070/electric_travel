@@ -44,7 +44,7 @@ const Signup = () => {
       );
     };
 
-export default Signup;
+export default Password;
 
 const styles = StyleSheet.create({
     container: {

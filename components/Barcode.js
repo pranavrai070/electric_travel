@@ -62,6 +62,8 @@ function Barcode() {
 
 export default Barcode;
 
+
+
 const styles = StyleSheet.create({
   container: {
     display: "flex",

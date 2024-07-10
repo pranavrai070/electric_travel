@@ -1,23 +1,35 @@
 import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
 import React from 'react';
-
+import { LinearGradient } from 'expo-linear-gradient';
 const Help = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.Text1}>Help & Support</Text>
      <View style={styles.cardContainer}>
         {/* First Card */}
-        <View style={styles.cardOne}>
+        <LinearGradient
+          colors={["rgba(77, 223, 255, 1)","rgba(217, 217, 217, 0)"]}
+          style={styles.cardOne}
+        >
+            <View >
         <Image style={styles.image} source={require('../../assets/newLease.png')} />
           <Text style={styles.cardTitle}>Lease</Text>
         </View>
+        </LinearGradient>
+      
 
         {/* Second Card */}
-        <View style={styles.cardTwo}>
+        <LinearGradient
+          colors={["rgba(255, 227, 73, 1)","rgba(217, 217, 217, 0)"]}
+          style={styles.cardTwo}
+        >
+           <View  >
         <Image style={styles.image} source={require('../../assets/newRide.png')} />
           <Text style={styles.cardTitle}>Ride Now</Text>
           {/* Add any other content you want for the second card */}
         </View>
+        </LinearGradient>
+       
         
       </View>
       <Text style={styles.Text2}>How to use ?</Text>
@@ -135,26 +147,26 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#4DDFFF',
+    // backgroundColor: '#4DDFFF',
     borderRadius: 10,
-    elevation: 4, // Add elevation for shadow (Android)
-    shadowColor: '#000000', // Shadow color (iOS)
-    shadowOpacity: 0.2, // Shadow opacity (iOS)
-    shadowOffset: { width: 0, height: 2 }, // Shadow offset (iOS)
-    shadowRadius: 4, // Shadow radius (iOS)
+    // elevation: 4, // Add elevation for shadow (Android)
+    // shadowColor: '#000000', // Shadow color (iOS)
+    // shadowOpacity: 0.2, // Shadow opacity (iOS)
+    // shadowOffset: { width: 0, height: 2 }, // Shadow offset (iOS)
+    // shadowRadius: 4, // Shadow radius (iOS)
   },
   cardTwo: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 30,
-    backgroundColor: '#FFE349',
+    // backgroundColor: '#FFE349',
     borderRadius: 10,
-    elevation: 4, // Add elevation for shadow (Android)
-    shadowColor: '#000000', // Shadow color (iOS)
-    shadowOpacity: 0.2, // Shadow opacity (iOS)
-    shadowOffset: { width: 0, height: 2 }, // Shadow offset (iOS)
-    shadowRadius: 4, // Shadow radius (iOS)
+    // elevation: 4, // Add elevation for shadow (Android)
+    // shadowColor: '#000000', // Shadow color (iOS)
+    // shadowOpacity: 0.2, // Shadow opacity (iOS)
+    // shadowOffset: { width: 0, height: 2 }, // Shadow offset (iOS)
+    // shadowRadius: 4, // Shadow radius (iOS)
   },
   cardTitle: {
     fontSize: 20,

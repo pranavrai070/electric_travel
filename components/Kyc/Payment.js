@@ -10,19 +10,31 @@ import {
   Linking,
 } from "react-native";
 import Logo from "../../assets/logoM.png";
-
+import { LinearGradient } from "expo-linear-gradient";
 
 function Payment() {
   return (
     <View style={styles.container}>
-      <View style={styles.card}>
-        <Image source={Logo} style={styles.logo} />
-        <View style={styles.balance}>
-          <Text>Available balance</Text>
-          <Text style={{ fontWeight: 700, fontSize: 28 }}>₹0.00</Text>
+      <LinearGradient
+        style={styles.card}
+        colors={[
+          "rgba(75, 201, 255, 1)",
+          "rgba(217, 217, 217, 0)",
+          "rgba(255, 253, 239, 0.99)",
+        ]}
+        start={{ x: 0.5, y: 0 }}
+        end={{ x: 0.5, y: 1 }}
+        locations={[0.0021, 1, 1, 1]}
+      >
+        <View>
+          <Image source={Logo} style={styles.logo} />
+          <View style={styles.balance}>
+            <Text>Available balance</Text>
+            <Text style={{ fontWeight: 700, fontSize: 28 }}>₹0.00</Text>
+          </View>
+          <Text style={styles.addMoney}>+Add FEV Money</Text>
         </View>
-        <Text style={styles.addMoney}>+Add FEV Money</Text>
-      </View>
+      </LinearGradient>
 
       <Text
         style={{ fontWeight: 700, marginTop: 10, marginLeft: 10, fontSize: 20 }}
@@ -67,6 +79,15 @@ const styles = StyleSheet.create({
     // backgroundColor:( '#d9d9d9')
   },
 
+  card2: {
+    height: 180,
+    // padding: 10,
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: "lightgrey",
+    // backgroundColor:( '#d9d9d9')
+  },
+
   logo: {
     width: 30,
     height: 30,
@@ -74,14 +95,14 @@ const styles = StyleSheet.create({
 
   balance: {
     position: "absolute",
-    right: 20,
-    top: 20,
+    right: 15,
+    top: 10,
   },
 
   addMoney: {
     position: "absolute",
-    bottom: 20,
-    right: 20,
+    top: 120,
+    right: 10,
     paddingVertical: 5,
     paddingHorizontal: 30,
     borderRadius: 12,

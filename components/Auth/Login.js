@@ -46,7 +46,7 @@ const LoginScreen = () => {
               placeholder="Phone Number"
               placeholderTextColor="#FFFFFF"
               style={styles.input}
-              keyboardType="phone-pad"
+              // keyboardType="phone-pad"
               value={mobileNumber}
               onChangeText={setMobileNumber}
             />

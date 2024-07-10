@@ -56,7 +56,7 @@ const Signup = () => {
       );
     };
 
-export default Signup;
+export default Verification;
 
 const styles = StyleSheet.create({
     container: {

@@ -8,7 +8,7 @@ import {
   Alert,
   Image,
 } from "react-native";
-const Profile = require("../assets/profilepic.png");
+const Profile = require("../assets/newprofilepic.png");
 import { useNavigation } from "expo-router";
 
 function completeProfile() {
@@ -16,8 +16,8 @@ function completeProfile() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.image}>
-        <Image style={styles.image} source={Profile} />
+      <View style={styles.imgDiv} className="p-1" >
+        <Image style={styles.image} source={Profile} resizeMode="contain"  />
         {/* <View style={styles.heading}> */}
         <Text style={styles.heading}>
           {" "}
@@ -42,7 +42,6 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     height: "100%",
     overflow:"visible",
-    height:'100%'
   },
 
   loginButton: {
@@ -64,10 +63,16 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: "100%",
-    padding: 10,
-    marginTop: 10,
+    width:350 ,
+    height:350,
+    paddingHorizontal: 10,
   },
+
+  imgDiv:{
+// padding:1
+  },
+
+
 
   heading: {
     textAlign: "center",

@@ -26,12 +26,15 @@ function KycDetails() {
           label="Mobile"
           value={mobile}
           onChangeText={setMobile}
+       
+
         />
         <CustomTextInput label="Email" value={email} onChangeText={setEmail} />
         <CustomTextInput
           label="Pincode"
           value={pincode}
           onChangeText={setPincode}
+     
         />
       </View>
       <CustomButton text="Next" onPress={()=>(navigation.navigate('KycId'))} />
