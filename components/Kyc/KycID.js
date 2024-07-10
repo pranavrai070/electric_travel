@@ -2,14 +2,21 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import CustomButton from "./Button";
 import NavigationBar from "./Navbar";
+import { useNavigation } from "expo-router";
 const Camera = require("../../assets/Camera.png");
 
+
 function KycID() {
+
+  const navigation=useNavigation();
+
   const [activeLink, setActiveLink] = useState("Aadhar Card");
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
   };
+
+
 
   const handleFrontCardClick = () => {};
 
@@ -17,7 +24,7 @@ function KycID() {
 
   return (
     <View style={styles.container}>
-      <NavigationBar />
+        <NavigationBar />
       <View style={styles.formContainer}>
         <View>
           <Text style={styles.heading}>Choose Document Type</Text>
@@ -68,7 +75,7 @@ function KycID() {
           </View>
         </View>
         <View>
-          <CustomButton text="Next" />
+          <CustomButton text="Next" onPress={()=>(navigation.navigate('KycBankDetails'))} />
         </View>
       </View>
     </View>

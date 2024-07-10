@@ -12,8 +12,8 @@ import LeasePayment from "../components/Kyc/LeasePayment";
 function kyc() {
   return (
     <View>
-      <KycPhoto/>
-      {/* <CompleteKYC/> */}
+      {/* <KycPhoto/> */}
+      <CompleteKYC/>
       {/* <KycDetails/> */}
       {/* <KycID/> */}
       {/* <KycBank /> */}

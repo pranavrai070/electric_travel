@@ -50,11 +50,11 @@ const takePhoto = () => {
 
       <View style={styles.bottomActionButton} className="flex felx-col justify-center items-center translate-y-56">
 
-        <TouchableOpacity style={styles.skipButton} className="flex flex-row justify-center items-center mb-3">
+        <TouchableOpacity style={styles.skipButton} onPress={()=>(navigation.navigate('feedback'))} className="flex flex-row justify-center items-center mb-3">
             <Text className="font-semibold">Skip</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.finishButton} className="flex flex-row justify-center items-center">
+        <TouchableOpacity style={styles.finishButton} onPress={()=>(navigation.navigate('feedback'))} className="flex flex-row justify-center items-center">
             <Text className="font-semibold">Finish</Text>
         </TouchableOpacity>
       </View>

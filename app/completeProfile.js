@@ -9,8 +9,11 @@ import {
   Image,
 } from "react-native";
 const Profile = require("../assets/profilepic.png");
+import { useNavigation } from "expo-router";
 
 function completeProfile() {
+  const navigation=useNavigation();
+
   return (
     <View style={styles.container}>
       <View style={styles.image}>
@@ -23,7 +26,7 @@ function completeProfile() {
         {/* </View> */}
       </View>
       <View>
-        <TouchableOpacity style={styles.loginButton}>
+        <TouchableOpacity style={styles.loginButton} onPress={()=>(navigation.navigate('profile'))}>
           <Text style={styles.buttonText}>Complete Your Profile</Text>
         </TouchableOpacity>
       </View>

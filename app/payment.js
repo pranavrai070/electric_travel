@@ -1,8 +1,11 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image ,TextInput} from "react-native";
 import React from "react";
 import { LinearGradient } from 'expo-linear-gradient';
+import {useNavigation} from '@react-navigation/native';
 
-const payment = () => {
+const Payment = () => {
+
+  const navigation = useNavigation();
 
     const [text, onChangeText] = React.useState('');
   return (
@@ -79,7 +82,7 @@ const payment = () => {
       </View>
     
     <View className="items-center justify-center">
-    <TouchableOpacity style={styles.continueButton} className="items-center justify-center mt-10">
+    <TouchableOpacity style={styles.continueButton} className="items-center justify-center mt-10" onPress={()=>(navigation.navigate('rideStart'))}>
         <Text className="font-semibold">
             Continue
         </Text>
@@ -91,7 +94,7 @@ const payment = () => {
   );
 };
 
-export default payment;
+export default Payment;
 
 const styles = StyleSheet.create({
   card: {

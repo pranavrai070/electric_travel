@@ -3,8 +3,12 @@ import { StyleSheet, Text, View } from "react-native";
 import CustomTextInput from "./CustumInput";
 import CustomButton from "./Button";
 import NavigationBar from "./Navbar";
+import { useNavigation } from "expo-router";
 
 function KycBank() {
+
+    const navigation=useNavigation();
+
     const [activeLink, setActiveLink] = useState("Aadhar Card");
 
     const handleLinkClick = (link) => {
@@ -57,7 +61,7 @@ function KycBank() {
         <CustomTextInput label="IFSC code" />
       </View>
 
-      <CustomButton text="Submit" />
+      <CustomButton text="Submit" onPress={()=>(navigation.navigate('(tabs)'))} />
     </View>
   );
 }

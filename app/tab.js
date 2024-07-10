@@ -66,7 +66,7 @@ const Rupee = require("../assets/rupee.png");
 const Help = require("../assets/help.png");
 const Dot = require("../assets/dot.png");
 
-function Tabs() {
+function Tab() {
   const [activeTab, setActiveTab] = useState("Home");
 
   const handleTabPress = (tabName) => {
@@ -142,7 +142,7 @@ function Tabs() {
   );
 }
 
-export default Tabs;
+export default Tab;
 
 const styles = StyleSheet.create({
   container: {

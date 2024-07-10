@@ -1,12 +1,15 @@
 import { StyleSheet, Text, View, TextInput, Button,Image, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
+import { useNavigation } from 'expo-router';
 
 
 const Signup = () => {
+  const navigation=useNavigation();
+
     const [phoneNumber, setPhoneNumber] = useState('');
     const handleVerify = () => {
         // Implement verification logic here (e.g., send OTP to the phone number)
-        alert(`Verifying phone number: ${phoneNumber}`);
+        navigation.navigate('verification')
       };
 
       const handlePhoneNumberChange = (number) => {

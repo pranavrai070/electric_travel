@@ -3,16 +3,22 @@ import { StyleSheet, Text, View } from "react-native";
 import CustomTextInput from "./CustumInput";
 import CustomButton from "./Button";
 import NavigationBar from "./Navbar";
+import KycID from "./KycID";
+import { useNavigation } from "expo-router";
 
 function KycDetails() {
+
+  const navigation=useNavigation();
+
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
   const [email, setEmail] = useState("");
   const [pincode, setPincode] = useState("");
 
+
   return (
     <View style={styles.container}>
-      <NavigationBar />
+  <NavigationBar />
       <View style={styles.formContainer}>
         <Text style={styles.heading}>Enter Your Details</Text>
         <CustomTextInput label="Name" value={name} onChangeText={setName} />
@@ -28,9 +34,8 @@ function KycDetails() {
           onChangeText={setPincode}
         />
       </View>
-
-      <CustomButton text="Next" />
-    </View>
+      <CustomButton text="Next" onPress={()=>(navigation.navigate('KycId'))} />
+</View>
   );
 }
 

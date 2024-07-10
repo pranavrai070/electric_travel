@@ -13,8 +13,11 @@ import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import { BlurView } from "expo-blur";
 const Turn = require("../assets/turnRight.png");
 const Avatar = require("../assets/avatar.png");
+import {useNavigation} from '@react-navigation/native';
 
 function RideStart() {
+
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.top}>
@@ -43,7 +46,7 @@ function RideStart() {
           {/* <Image source={KeyIcon} style={styles.icon} /> */}
           <View style={styles.turn}>
             <Image source={Turn} style={styles.Turnicon} />
-            <Text style={{ fontSize: 10 }}>1.1Km</Text>
+            <Text onPress={()=>(navigation.navigate('takePhoto'))} style={{ fontSize: 10 }}>1.1Km</Text>
           </View>
         </View>
         <View style={styles.cardMain}>

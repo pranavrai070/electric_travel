@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import { TextInput } from 'react-native-paper';
 import Dropdown from 'react-native-input-select';
+import { useNavigation } from 'expo-router';
 
 
 
@@ -17,15 +18,17 @@ const data = [
 
 const Card = ({ icon, title, description }) => {
   return (
-    <View className="bg-white rounded-lg p-2 mx-1 text-center flex flex-col justify-center items-center">
-      <View className="mb-2">{icon}</View>
-      <Text className="text-xs mb-1">{title}</Text>
-      <Text className="text-lg">{description}</Text>
+    <View className="p-2 text-center flex flex-col justify-center items-center" style={styles.featureCard}>
+      <View className="mb-0">{icon}</View>
+      <Text className="text-xs" style={styles.cardTitle}>{title}</Text>
+      <Text className="text-lg" style={styles.cardValue}>{description}</Text>
     </View>
   );
 };
 
 const Profile = () => {
+
+  const navigation=useNavigation();
 
   const [country, setCountry] = React.useState();
 
@@ -45,7 +48,7 @@ const Profile = () => {
       </View>
       </View>
 
-    <View className="flex flex-row justify-between px-4 mt-0 mr-10">
+    <View className="flex flex-row justify-around px-4">
       {data.map((item, index) => (
         <Card key={index} icon={item.icon} title={item.title} description={item.description} />
       ))}
@@ -97,7 +100,7 @@ const Profile = () => {
 
 
     <View className="flex felx-col justify-center items-center mt-4 mb-4">
-    <TouchableOpacity style={styles.loginButton}>
+    <TouchableOpacity style={styles.loginButton} onPress={()=>(navigation.navigate('(tabs)'))}>
             <Text style={styles.buttonText}>Update Profile</Text>
     </TouchableOpacity>
     </View>
@@ -131,6 +134,17 @@ const styles = StyleSheet.create({
     padding: 20,
     elevation: 5, // Shadow effect
   },
+  featureCard:{
+    marginHorizontal:10,
+    width:75,
+    borderRadius:12,
+  },
+  cardTitle:{
+    fontSize:10
+  },
+  cardValue:{
+    fontSize:15
+  }
 })
 
 

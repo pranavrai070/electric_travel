@@ -1,8 +1,11 @@
 import { StyleSheet, Text, View ,TouchableOpacity,Image,FlatList, ScrollView } from "react-native";
 import React from "react";
 import { LinearGradient } from 'expo-linear-gradient';
+import { useNavigation } from "expo-router";
 
-const menu = () => {
+const Menu = () => {
+
+   const navigation = useNavigation();
 
     const data = [
         { title: 'Distance', description: '0 km', icon: <Image style={styles.cardIcon} source={require('../assets/distance.png')} /> },
@@ -48,6 +51,15 @@ const menu = () => {
         </TouchableOpacity>
       );
 
+      const menuItemPressHandler=(item)=>{
+         console.log("name on pressing any button");
+         console.log(item.name);
+         if(item.name=="Logout"){
+          navigation.navigate('login');
+         }
+
+      }
+
 
   return (
     <View className="h-full">
@@ -73,7 +85,7 @@ const menu = () => {
           />
         
         <View className="translate-y-6 flex flex-col items-end">
-           <TouchableOpacity className="">
+           <TouchableOpacity className="" onPress={()=>(navigation.navigate('profile'))}>
            <Image
             source={require("../assets/edit_icon.png")}
             className=""
@@ -109,7 +121,7 @@ const menu = () => {
       <View className="m-4">
 
      {options.map((item)=>(
-      <TouchableOpacity style={styles.optionContainer} key={item.id}>
+      <TouchableOpacity style={styles.optionContainer} key={item.id} onPress={()=>menuItemPressHandler(item)}>
           <View style={styles.iconContainer}>
             <Image source={item.icon} style={styles.icon} />
           </View>
@@ -124,7 +136,7 @@ const menu = () => {
   );
 };
 
-export default menu;
+export default Menu;
 
 const styles = StyleSheet.create({
     card: {

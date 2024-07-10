@@ -12,17 +12,19 @@ const Logo = require("../../assets/logoM.png");
 const PhoneIcon = require("../../assets/Phone.png");
 const KeyIcon = require("../../assets/Password.png");
 import { LinearGradient } from "expo-linear-gradient";
+import {useNavigation} from '@react-navigation/native';
 
 const LoginScreen = () => {
+  const navigation = useNavigation();
   const [mobileNumber, setMobileNumber] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    const validMobileNumber = "9521877477";
-    const validPassword = "000000";
+    const validMobileNumber = "9999999999";
+    const validPassword = "00000";
 
-    if (mobileNumber === validMobileNumber && password === validPassword) {
-      Alert.alert("Login Successful", "Welcome!");
+    if (mobileNumber === "" && password === "") {
+      navigation.navigate('(tabs)')
     } else {
       Alert.alert("Login Failed", "Please check your credentials.");
     }
@@ -67,7 +69,7 @@ const LoginScreen = () => {
           <Text style={styles.forget}>Forget Password</Text>
           <View style={styles.bottom}>
             <Text style={styles.newuser}>New User?</Text>
-            <Text style={styles.signUpText}> Sign Up</Text>
+            <Text onPress={()=>(navigation.navigate('signup'))} style={styles.signUpText}> Sign Up</Text>
           </View>
         </View>
       </View>

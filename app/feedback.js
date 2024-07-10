@@ -1,7 +1,10 @@
 import { StyleSheet, Text, View,Image,SafeAreaView,TextInput,TouchableOpacity,ScrollView } from 'react-native'
-import React from 'react'
+import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 
 const feedback = () => {
+
+const navigation = useNavigation();
 
 const [text, onChangeText] = React.useState('');
 
@@ -33,7 +36,7 @@ const [text, onChangeText] = React.useState('');
       />
       </View>
 
-      <TouchableOpacity style={styles.finishButton} className="flex flex-row justify-center items-center -translate-y-16">
+      <TouchableOpacity style={styles.finishButton} onPress={()=>(navigation.navigate('(tabs)'))} className="flex flex-row justify-center items-center -translate-y-16">
             <Text className="font-semibold">Submit</Text>
         </TouchableOpacity>
       

@@ -11,29 +11,23 @@ import {
 const Profile = require("../../assets/KycProfile.png");
 import CustomButton from "./Button";
 import KycDetails from "./KycDetails";
+import { useNavigation } from "expo-router";
 
 function completeProfile() {
-  const [showKycDetails, setShowKycDetails] = useState(false);
 
-  const handleNextClick = () => {
-    setShowKycDetails(true);
-  };
+  const navigation=useNavigation();
+
+
   return (
     <View style={styles.container}>
-        {!showKycDetails ? (
       <View style={styles.image}>
         <Image style={styles.image} source={Profile} />
         <View style={styles.heading1}>
           <Text style={styles.heading}>Complete your KYC</Text>
          
         </View>
-        <CustomButton text="Next" onPress={handleNextClick} />
+        <CustomButton text="Next" onPress={()=>(navigation.navigate('kycPersonalDetails'))} />
       </View>
-
-      // <CustomButton text="Next" />
-    ) : (
-      <KycDetails />
-    )}
     </View>
 
   );

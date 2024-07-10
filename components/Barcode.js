@@ -14,8 +14,11 @@ import { BlurView } from "expo-blur";
 const QRcode = require("../assets/qrcode.png");
 const Locations = require("../assets/b&wLocation.png");
 const Turn = require("../assets/turnRight.png");
+import {useNavigation} from '@react-navigation/native';
 
 function Barcode() {
+
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.top}>
@@ -48,7 +51,7 @@ function Barcode() {
           </View>
         </View>
         <View style={styles.cardMain}>
-          <TouchableOpacity style={styles.card1}>
+          <TouchableOpacity style={styles.card1} onPress={()=>(navigation.navigate('completeProfile'))}> 
             <Image source={QRcode} style={styles.qr} />
           </TouchableOpacity>
         </View>

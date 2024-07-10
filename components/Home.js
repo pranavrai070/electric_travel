@@ -6,11 +6,13 @@ const ArrowIcon = require("../assets/arrow.png");
 const Location = require("../assets/location.png");
 const Member = require("../assets/member.png");
 import { LinearGradient } from "expo-linear-gradient";
+import {useNavigation} from '@react-navigation/native';
 // import MapView, { Marker } from 'react-native-maps';
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import { BlurView } from "expo-blur";
 
 function Home() {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.top}>
@@ -50,7 +52,7 @@ function Home() {
           colors={["rgba(72, 222, 255, 0.7)","rgba(0, 209, 255, 0.9)", "rgba(72, 222, 255, 0)"]}
           style={styles.card1}
         >
-          <TouchableOpacity >
+          <TouchableOpacity onPress={()=>(navigation.navigate('barcode'))} >
             <Text style={{ fontWeight: 500 }}>Ride Now</Text>
             <Image source={LeaseIcon} style={styles.icon} />
             <View
