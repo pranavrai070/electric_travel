@@ -19,14 +19,51 @@ const LoginScreen = () => {
   const [mobileNumber, setMobileNumber] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
-    const validMobileNumber = "9999999999";
-    const validPassword = "00000";
+  // const handleLogin = () => {
+  //   const validMobileNumber = "9999999999";
+  //   const validPassword = "00000";
 
-    if (mobileNumber === "" && password === "") {
-      navigation.navigate('(tabs)')
-    } else {
-      Alert.alert("Login Failed", "Please check your credentials.");
+  //   if (mobileNumber === "" && password === "") {
+  //     navigation.navigate('(tabs)')
+  //   } else {
+  //     Alert.alert("Login Failed", "Please check your credentials.");
+  //   }
+  // };
+
+
+  const handleLogin = async () => {
+    if (mobileNumber === "" || password === "") {
+      Alert.alert("Login Failed", "Please fill in both fields.");
+      return;
+    }
+
+    try {
+      const response = await fetch('http://192.168.15.169:5001/api/login/user_login/validate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          in_login_id:mobileNumber,
+          in_password:password,
+        }),
+      });
+
+      // const data = await response.json();
+
+      console.log("getting login resposnes",response.status);
+
+      if (response.status===200) {
+        // Assuming the API response contains a success message or token
+        // Navigate to the main tab screen
+        navigation.navigate('(tabs)');
+      } else {
+        // Handle API errors
+        Alert.alert("Login Failed", data.message || "Please check your credentials.");
+      }
+    } catch (error) {
+      // Handle network errors
+      Alert.alert("Login Failed", "Something went wrong. Please try again later.");
     }
   };
   return (

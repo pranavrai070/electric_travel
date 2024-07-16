@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useNavigation } from 'expo-router';
 
 
-const Signup = () => {
+const Verification = () => {
 
   const navigation=useNavigation();
 
