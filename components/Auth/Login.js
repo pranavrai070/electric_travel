@@ -106,7 +106,7 @@ const LoginScreen = () => {
           <Text style={styles.forget}>Forget Password</Text>
           <View style={styles.bottom}>
             <Text style={styles.newuser}>New User?</Text>
-            <Text onPress={()=>(navigation.navigate('signup'))} style={styles.signUpText}> Sign Up</Text>
+            <Text onPress={()=>(navigation.navigate('business'))} style={styles.signUpText}> Sign Up</Text>
           </View>
         </View>
       </View>

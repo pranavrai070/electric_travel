@@ -3,19 +3,19 @@ import React, { useState } from 'react';
 import { useNavigation } from 'expo-router';
 
 
+
 const Password = () => {
 
   const navigation=useNavigation();
 
     const [phoneNumber, setPhoneNumber] = useState('');
-    const handleVerify = () => {
-        // Implement verification logic here (e.g., send OTP to the phone number)
-        navigation.navigate('kyc');
-      };
+
 
       const handlePhoneNumberChange = (number) => {
         setPhoneNumber(number);
     };
+
+
 
       return (
         <View style={styles.container}>
@@ -36,7 +36,7 @@ const Password = () => {
             onChangeText={handlePhoneNumberChange}
             keyboardType="phone-pad"
           />
-         <TouchableOpacity style={styles.button} onPress={handleVerify}>
+         <TouchableOpacity style={styles.button} onPress={()=>(navigation.navigate('kycPersonalDetails'))}>
             <Text style={styles.buttonText}>Submit</Text>
           </TouchableOpacity>
 

@@ -7,38 +7,36 @@ import KycID from "./KycID";
 import { useNavigation } from "expo-router";
 
 function KycDetails() {
-
-  const navigation=useNavigation();
+  const navigation = useNavigation();
 
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
   const [email, setEmail] = useState("");
   const [pincode, setPincode] = useState("");
-
+  const [dob, setDob] = useState("");
 
   return (
     <View style={styles.container}>
-  <NavigationBar />
+      <NavigationBar />
       <View style={styles.formContainer}>
         <Text style={styles.heading}>Enter Your Details</Text>
-        <CustomTextInput label="Name" value={name} onChangeText={setName} />
-        <CustomTextInput
+        <CustomTextInput label="Name: as per adhaar" value={name} onChangeText={setName} />
+        {/* <CustomTextInput
           label="Mobile"
           value={mobile}
           onChangeText={setMobile}
-       
-
-        />
+        /> */}
         <CustomTextInput label="Email" value={email} onChangeText={setEmail} />
-        <CustomTextInput
+        {/* <CustomTextInput
           label="Pincode"
           value={pincode}
           onChangeText={setPincode}
      
-        />
+        /> */}
+        <CustomTextInput label="DOB" value={dob} onChangeText={setDob} />
       </View>
-      <CustomButton text="Next" onPress={()=>(navigation.navigate('KycId'))} />
-</View>
+      <CustomButton text="Next" onPress={() => navigation.navigate("KycId")} />
+    </View>
   );
 }
 
@@ -57,8 +55,8 @@ const styles = StyleSheet.create({
     shadowOffset: { width: -2, height: 30 },
     shadowOpacity: 10,
     shadowRadius: 20,
-   marginTop:20,
-   marginBottom:25
+    marginTop: 20,
+    marginBottom: 25,
   },
 
   heading: {

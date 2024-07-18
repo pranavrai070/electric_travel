@@ -11,8 +11,11 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 const Profile = require("../assets/newBusiness.jpg");
 import { Platform } from 'react-native';
+import { useNavigation } from "expo-router";
 
 function Business() {
+
+  const navigation=useNavigation();
   return (
     <LinearGradient
       colors={[
@@ -31,10 +34,10 @@ function Business() {
         </View>
         <View style={styles.bottom}>
           <TouchableOpacity style={styles.ridenow}>
-            <Text style={styles.buttonText1}>Ride Now</Text>
+            <Text style={styles.buttonText1} onPress={()=>(navigation.navigate('signup'))}>New Business</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.business}>
-            <Text style={styles.buttonText2}>Business</Text>
+          <TouchableOpacity style={styles.business} >
+            <Text style={styles.buttonText2} >Existing Business</Text>
           </TouchableOpacity>
         </View>
       </View>
