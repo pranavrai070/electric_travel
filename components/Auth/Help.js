@@ -11,7 +11,7 @@ const Help = () => {
           colors={["rgba(77, 223, 255, 1)","rgba(217, 217, 217, 0)"]}
           style={styles.cardOne}
         >
-            <View >
+            <View style={styles.sh} >
         <Image style={styles.image} source={require('../../assets/newLease.png')} />
           <Text style={styles.cardTitle}>Lease</Text>
         </View>
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     marginTop: 15
   },
   Text4: {
-    fontSize: 20,
+    fontSize: 16,
     flex: 0.8,
     color: '#434343',
     fontWeight: '500',
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
   tab: {
     justifyContent:'space-between',
     flexDirection: 'row',
-    paddingVertical: 10,
+    paddingVertical: 8,
     alignItems: 'center'
   },
   chat: {
@@ -154,6 +154,15 @@ const styles = StyleSheet.create({
     // shadowOpacity: 0.2, // Shadow opacity (iOS)
     // shadowOffset: { width: 0, height: 2 }, // Shadow offset (iOS)
     // shadowRadius: 4, // Shadow radius (iOS)
+  
+  },
+
+  sh: {
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,  
+    elevation: 5
   },
   cardTwo: {
     flex: 1,

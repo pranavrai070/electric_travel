@@ -38,7 +38,7 @@ const LoginScreen = () => {
     }
 
     try {
-      const response = await fetch('http://192.168.15.169:5001/api/login/user_login/validate', {
+      const response = await fetch('http://192.168.15.115:5001/api/login/user_login/validate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
