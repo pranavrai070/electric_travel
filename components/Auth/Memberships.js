@@ -1,18 +1,43 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import { ScrollView } from 'react-native';
 
 
 
 const MyComponent = () => {
 
-    const data = [
+  const [activeButton, setActiveButton] = useState('Daily');
+
+    const data = {
+      'Daily': [
         { title: '1 days', price: '₹ 299/day' },
         { title: '2 days', price: '₹ 249/day' },
         { title: '3-7 days', price: '₹ 199/day' },
         { title: '8-15 days', price: '₹ 189/day' },
         { title: '16-30 days', price: '₹ 189/day' },
-      ];
+      ],
+      'Weekly': [
+        { title: '1 days', price: '₹ 299/day' },
+        { title: '2 days', price: '₹ 249/day' },
+        { title: '3-7 days', price: '₹ 199/day' },
+        { title: '8-15 days', price: '₹ 189/day' },
+        { title: '16-30 days', price: '₹ 189/day' },
+      ],
+    'Monthly': [
+      { title: '1 days', price: '₹ 299/day' },
+      { title: '2 days', price: '₹ 249/day' },
+      { title: '3-7 days', price: '₹ 199/day' },
+      { title: '8-15 days', price: '₹ 189/day' },
+      { title: '16-30 days', price: '₹ 189/day' },
+      ],
+
+  };
+
+  const handleButtonClick = (button) => {
+    setActiveButton(button);
+     console.log("Active Button:", button);
+  console.log("Data for Active Button:", data[button]);
+};
 
   return (
 
@@ -25,23 +50,37 @@ const MyComponent = () => {
     
         {/* First View */}
           {/* First Card */}
-          <View style={styles.card}>
+          <TouchableOpacity 
+           onPress={() => handleButtonClick('Daily')}
+           style={[styles.card, activeButton === 'Daily' && styles.activeButton]}
+          >
           <Image style={styles.image} source={require('../../assets/newLease.png')} />
             <Text style={styles.cardTitle}>₹ 0000</Text>
             <Text style={styles.text}>base charge</Text>
             <Text style={styles.text1}>Daily</Text>
-          </View>
+          </TouchableOpacity>
+
+
 
           {/* Second Card */}
-          <View style={styles.card}>
+          <TouchableOpacity
+           onPress={() => handleButtonClick('Weekly')}
+           style={[styles.card, activeButton === 'Weekly' && styles.activeButton]}
+          >
           <Image style={styles.image} source={require('../../assets/newLease.png')} />
             <Text style={styles.cardTitle}>₹ 0000</Text>
             <Text style={styles.text}>base charge</Text>
             <Text style={styles.text1}>Weekly</Text>
-          </View>
+          </TouchableOpacity>
+
+
+
 
           {/* Third Card */}
-          <View style={styles.card}>
+          <TouchableOpacity
+          onPress={() => handleButtonClick('Monthly')}
+          style={[styles.card, activeButton === 'Monthly' && styles.activeButton]}
+          >
             <Image style={styles.image} source={require('../../assets/newLease.png')} />
             <Text style={styles.cardTitle}>₹ 0000</Text>
             <Text style={styles.text}>base charge</Text>
@@ -49,7 +88,7 @@ const MyComponent = () => {
             <TouchableOpacity style={styles.loginButton}>
           <Text style={styles.buttonText}>Auto Renewal</Text>
         </TouchableOpacity>
-          </View>
+          </TouchableOpacity>
         </View>
 
 
@@ -59,10 +98,11 @@ const MyComponent = () => {
 
     <View style={styles.head}> 
      <Image style={styles.logo} source={require('../../assets/fevlogo.png')} />
-     <Text style={styles.T2}>Daily</Text>
+     <Text style={styles.T2}>{activeButton}</Text>
     </View>
 
-    {data.map((item, index) => (
+
+    {data[activeButton].map((item, index) => (
             <View key={index}>
               <View style={styles.head}>
                 <Text style={styles.T1}>{item.title}</Text>
