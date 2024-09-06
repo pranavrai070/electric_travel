@@ -16,8 +16,8 @@ import {useNavigation} from '@react-navigation/native';
 
 const LoginScreen = () => {
   const navigation = useNavigation();
-  const [mobileNumber, setMobileNumber] = useState("");
-  const [password, setPassword] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("7777777777");
+  const [password, setPassword] = useState("admin");
 
   // const handleLogin = () => {
   //   const validMobileNumber = "9999999999";
@@ -38,7 +38,7 @@ const LoginScreen = () => {
     }
 
     try {
-      const response = await fetch('http://192.168.15.115:5001/api/login/user_login/validate', {
+      const response = await fetch('http://192.168.15.169:5001/api/login/user_login/validate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -106,7 +106,7 @@ const LoginScreen = () => {
           <Text style={styles.forget}>Forget Password</Text>
           <View style={styles.bottom}>
             <Text style={styles.newuser}>New User?</Text>
-            <Text onPress={()=>(navigation.navigate('business'))} style={styles.signUpText}> Sign Up</Text>
+            <Text onPress={()=>(navigation.navigate('signupOption'))} style={styles.signUpText}> Sign Up</Text>
           </View>
         </View>
       </View>

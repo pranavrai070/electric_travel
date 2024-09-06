@@ -1,20 +1,28 @@
 import { StyleSheet, Text, View, TextInput, Button,Image, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import { useNavigation } from 'expo-router';
+import { useRouter } from 'expo-router';
 
 
-
-const Password = () => {
+const Password = ({hrRider}) => {
 
   const navigation=useNavigation();
+  const router = useRouter();
 
-    const [phoneNumber, setPhoneNumber] = useState('');
+
+  console.log("getting hrRider at password file",hrRider);
+
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
 
 
-      const handlePhoneNumberChange = (number) => {
-        setPhoneNumber(number);
+    const handlePasswordChange = (password) => {
+      setPassword(password);
     };
 
+    const handleConfirmPasswordChange = (password) => {
+      setConfirmPassword(password);
+    };
 
 
       return (
@@ -25,18 +33,21 @@ const Password = () => {
           <TextInput
             style={styles.input}
             placeholder="Password"
-            value={phoneNumber}
-            onChangeText={handlePhoneNumberChange}
-            keyboardType="phone-pad"
+            value={password}
+            onChangeText={handlePasswordChange}
+            keyboardType="default"
           />
           <TextInput
             style={styles.input}
             placeholder="Confirm Password"
-            value={phoneNumber}
-            onChangeText={handlePhoneNumberChange}
-            keyboardType="phone-pad"
+            value={confirmPassword}
+            onChangeText={handleConfirmPasswordChange}
+            keyboardType="default"
           />
-         <TouchableOpacity style={styles.button} onPress={()=>(navigation.navigate('kycPersonalDetails'))}>
+         <TouchableOpacity style={styles.button} onPress={()=>(router.navigate({
+      pathname: '/kycPersonalDetails',
+      params: {hrRider},
+    }))}>
             <Text style={styles.buttonText}>Submit</Text>
           </TouchableOpacity>
 

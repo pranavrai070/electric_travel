@@ -4,38 +4,56 @@ import CustomTextInput from "./CustumInput";
 import CustomButton from "./Button";
 import NavigationBar from "./Navbar";
 import KycID from "./KycID";
+import { Picker } from "@react-native-picker/picker";
 import { useNavigation } from "expo-router";
 
-function KycDetails() {
+function KycDetails({hrRider}) {
   const navigation = useNavigation();
+
+  const [selectedBhType, setSelectedBhType] = useState("Organization");
 
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
   const [email, setEmail] = useState("");
+  const [companyName, setCompanyName] = useState("");
   const [pincode, setPincode] = useState("");
   const [dob, setDob] = useState("");
 
+  const bhTypeData=[
+    {id:1,name:"Organization"},
+    {id:2,name:"Single Rider"}
+  ]
+
   return (
     <View style={styles.container}>
-      <NavigationBar />
       <View style={styles.formContainer}>
         <Text style={styles.heading}>Enter Your Details</Text>
-        <CustomTextInput label="Name: as per adhaar" value={name} onChangeText={setName} />
-        {/* <CustomTextInput
-          label="Mobile"
-          value={mobile}
-          onChangeText={setMobile}
-        /> */}
+        <CustomTextInput
+          label="Name: As per adhaar"
+          value={name}
+          onChangeText={setName}
+        />
+        
+        {!hrRider && <View>
+        <Text style={styles.pickerLabel}>Select Business House Type</Text>
+        <Picker
+          selectedValue={selectedBhType}
+          onValueChange={(itemValue, itemIndex) =>
+            setSelectedBhType(itemValue)
+          }
+        >
+          {bhTypeData.map((item)=>(
+            <Picker.Item key={item.id} label={item.name} value={item.name}/>
+          ))}
+        </Picker>
+        </View>}
+
+        {selectedBhType==="Organization" && !hrRider && <CustomTextInput label="Company Name as Per Gst" value={companyName} onChangeText={setCompanyName} /> }
+
         <CustomTextInput label="Email" value={email} onChangeText={setEmail} />
-        {/* <CustomTextInput
-          label="Pincode"
-          value={pincode}
-          onChangeText={setPincode}
-     
-        /> */}
         <CustomTextInput label="DOB" value={dob} onChangeText={setDob} />
       </View>
-      <CustomButton text="Next" onPress={() => navigation.navigate("KycId")} />
+      <CustomButton text="Submit" onPress={() => navigation.navigate("(tabs)")} />
     </View>
   );
 }

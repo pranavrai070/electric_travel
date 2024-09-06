@@ -16,7 +16,6 @@ const CustomTextInput = ({
           style={styles.input}
           //   placeholder={placeholder}
           value={value}
-          secureTextEntry
           onChangeText={onChangeText}
           {...rest}
         />

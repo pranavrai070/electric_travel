@@ -27,8 +27,6 @@
     "nativewind": "^2.0.11",
     "react": "18.2.0",
     "react-native": "0.74.5",
-    "react-native-blur": "^3.2.2",
-    "react-native-camera": "^4.2.1",
     "react-native-drop-shadow": "^1.0.0",
     "react-native-input-select": "^1.3.5",
     "react-native-inset-shadow": "^1.0.3",

@@ -55,9 +55,8 @@ const Menu = () => {
          console.log("name on pressing any button");
          console.log(item.name);
          if(item.name=="Logout"){
-          navigation.navigate('login');
+          navigation.navigate('index');
          }
-
       }
 
 

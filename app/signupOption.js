@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -10,20 +10,39 @@ import {
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 const Profile = require("../assets/newBusiness.jpg");
-import { Platform } from 'react-native';
+import { Platform } from "react-native";
 import { useNavigation } from "expo-router";
+import { useRouter } from 'expo-router';
 import CustomTextInput from "../components/Kyc/CustumInput";
 
 function Business() {
+  const navigation = useNavigation();
+  const router = useRouter();
 
-  const [existingBusiness,setExistingBusiness] =useState(false);
-  const [bhMobileNumber,setBhMobileNumber]=useState("");
 
-  const handleExistingBusinessHouseEntry=()=>{
-      setExistingBusiness(true);
+  const [existingBusiness, setExistingBusiness] = useState(false);
+  const [bhMobileNumber, setBhMobileNumber] = useState("");
+
+  const handleExistingBusinessHouseEntry = () => {
+    setExistingBusiness(true);
   };
 
-  const navigation=useNavigation();
+  const handleNavigateToSignup = () => {
+    // Define the data you want to pass
+    const dataToPass = {
+      business: existingBusiness,
+      mobileNumber: bhMobileNumber,
+      type: "individual", // Example of extra data you might want to pass
+    };
+
+    // Navigate to the 'signup' screen with the data
+    router.navigate({
+      pathname: '/signup',
+      params: {hrRider:true},
+    });
+  };
+
+
   return (
     <LinearGradient
       colors={[
@@ -37,29 +56,24 @@ function Business() {
       // style={styles.container}
     >
       <View style={styles.container}>
-        <View style={styles.top} >
+        <View style={styles.top}>
           <Image style={styles.image} source={Profile} resizeMode="contain" />
         </View>
         <View style={styles.bottom}>
           <TouchableOpacity style={styles.ridenow}>
-            <Text style={styles.buttonText1} onPress={()=>(navigation.navigate('signup'))}>New Business</Text>
+            <Text
+              style={styles.buttonText1}
+              onPress={() => navigation.navigate("business")}
+            >
+              Business
+            </Text>
           </TouchableOpacity>
-          {existingBusiness ?
-          <View style={styles.existingBusinessInput}>
-           <CustomTextInput
-          label="Business House Mobile Number"
-          value={bhMobileNumber}
-          onChangeText={setBhMobileNumber}
-        />
-        <TouchableOpacity style={styles.business} onPress={()=>(navigation.navigate('bhDetails'))} >
-          <Text style={styles.buttonText2}>
-            Check
-          </Text>
-        </TouchableOpacity>
-        </View>
-         :<TouchableOpacity style={styles.business} onPress={handleExistingBusinessHouseEntry} >
-            <Text style={styles.buttonText2} >Existing Business</Text>
-          </TouchableOpacity>}
+          <TouchableOpacity
+            style={styles.business}
+            onPress={handleNavigateToSignup}
+          >
+            <Text style={styles.buttonText2}>Quick Access</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </LinearGradient>
@@ -74,7 +88,6 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     // justifyContent: "space-evenly",
     height: "100%",
-
   },
 
   ridenow: {
@@ -95,12 +108,11 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
 
-  existingBusinessInput:{
-    marginHorizontal:"10%",
-    marginTop:"4%"
+  existingBusinessInput: {
+    marginHorizontal: "10%",
+    marginTop: "4%",
   },
 
- 
   business: {
     backgroundColor: "#Fff",
     paddingVertical: 10,
@@ -133,18 +145,17 @@ const styles = StyleSheet.create({
 
   image: {
     width: "100%",
-    height:'100%',
-    marginTop:200
+    height: "100%",
+    marginTop: 200,
   },
 
-  top:{
-    flex:1,
-    justifyContent:"space-evenly",
-  
+  top: {
+    flex: 1,
+    justifyContent: "space-evenly",
   },
 
-  bottom:{
-    flex:1,
-    justifyContent:'center'
-  }
+  bottom: {
+    flex: 1,
+    justifyContent: "center",
+  },
 });

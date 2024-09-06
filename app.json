@@ -22,7 +22,12 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.pranavrai070.electric_travel"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -37,6 +42,14 @@
           "recordAudioAndroid": true
         }
       ]
-    ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "60702684-e693-4eac-9675-c01f8b76ae79"
+      }
+    }
   }
 }

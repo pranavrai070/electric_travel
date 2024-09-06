@@ -1,16 +1,22 @@
 import { StyleSheet, Text, View, TextInput, Button,Image, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import { useNavigation } from 'expo-router';
+import { useRouter } from 'expo-router';
 
 
-const Verification = () => {
+const Verification = ({hrRider}) => {
 
   const navigation=useNavigation();
+  const router = useRouter();
 
     const [phoneNumber, setPhoneNumber] = useState('');
     const handleVerify = () => {
         // Implement verification logic here (e.g., send OTP to the phone number)
-        navigation.navigate('password');
+        console.log("getting hrrider detail at verification",hrRider);
+        router.navigate({
+          pathname: '/password',
+          params: {hrRider},
+        });
       };
 
       const handlePhoneNumberChange = (number) => {
